@@ -14,10 +14,12 @@
     "fix": "npm run fix:markuplint && npm run fix:stylelint && npm run fix:prettier",
     "fix:markuplint": "npm run lint:markuplint -- --fix",
     "fix:stylelint": "npm run lint:stylelint -- --fix",
-    "fix:prettier": "npm run check:prettier -- --write"
+    "fix:prettier": "npm run check:prettier -- --write",
+    "prepare": "lefthook install || echo 'Can not set git hooks'"
   },
   "devDependencies": {
     "browserslist": "^4.24.4",
+    "lefthook": "^1.11.9",
     "lightningcss": "^1.29.3",
     "markuplint": "^4.11.8",
     "prettier": "^3.5.3",
