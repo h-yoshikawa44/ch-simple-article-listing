@@ -1,0 +1,35 @@
+{
+  "name": "ch-simple-article-listing",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint-check": "npm run lint:markuplint && npm run lint:stylelint && npm run check:prettier",
+    "lint:markuplint": "markuplint \"./**/*.html\"",
+    "lint:stylelint": "stylelint \"./css/**/*.css\"",
+    "check:prettier": "prettier --check \"./**/*.{html,css,json,yml}\"",
+    "fix": "npm run fix:markuplint && npm run fix:stylelint && npm run fix:prettier",
+    "fix:markuplint": "npm run lint:markuplint -- --fix",
+    "fix:stylelint": "npm run lint:stylelint -- --fix",
+    "fix:prettier": "npm run check:prettier -- --write",
+    "prepare": "lefthook install || echo 'Can not set git hooks'"
+  },
+  "devDependencies": {
+    "browserslist": "^4.24.4",
+    "lefthook": "^1.11.9",
+    "lightningcss": "^1.29.3",
+    "markuplint": "^4.11.8",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.18.0",
+    "stylelint-config-recess-order": "^6.0.0",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-order": "^6.0.4",
+    "vite": "^6.2.0"
+  },
+  "volta": {
+    "node": "22.14.0"
+  }
+}
