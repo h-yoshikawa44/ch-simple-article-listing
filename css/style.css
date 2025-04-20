@@ -135,7 +135,9 @@ a {
   transition: background-size 0.3s;
 }
 
-.article-list-item h2 a:hover {
+.article-list-item h2 a:hover,
+.article-list-item h2 a:focus {
+  outline-color: transparent;
   background-position: bottom left; /* 下線のホバー時位置 */
   background-size: 100% 1px; /* 下線の横幅を100%にする */
 }
