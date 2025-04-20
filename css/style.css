@@ -1,101 +1,149 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  color: rgb(255 255 255 / 87%);
-  color-scheme: light dark;
-  background-color: #242424;
+  --black: #000;
+  --gray-darken: #4d5562;
+  --gray: #d9d9d9;
+  --white: #f8fafc;
+
+  /* color map */
+  --bg-color: var(--white);
+  --text-color-header: var(--black);
+  --text-color-date: var(--gray-darken);
+  --border-color: var(--black);
+
+  /* font */
+  --font-base: 'Poppins', system-ui, 'Avenir', 'Helvetica', 'Arial', sans-serif;
+}
+
+html,
+body {
+  font-family: var(--font-base);
   font-synthesis: none;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: var(--bg-color);
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: inherit;
   text-decoration: inherit;
 }
 
-a:hover {
-  color: #535bf2;
-}
+/* common
+-------------------- */
 
-body {
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 0;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  padding: 2rem;
+.container {
+  max-width: 640px;
+  padding: 0 5%;
   margin: 0 auto;
+}
+
+@media (width >= 768px) {
+  .container {
+    max-width: 732px;
+    padding: 0;
+  }
+}
+
+/* header
+-------------------- */
+
+.header {
+  padding: 48px 40px 44px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  transition: filter 300ms;
-  will-change: filter;
+.header__title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+@media (width >= 768px) {
+  .header {
+    padding: 48px 60px 44px;
+  }
 }
 
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+@media (width >= 1024px) {
+  .header {
+    padding-right: 176px;
+    padding-left: 176px;
+  }
 }
 
-.card {
-  padding: 2em;
+@media (width >= 1280px) {
+  .header {
+    padding-right: 300px;
+    padding-left: 300px;
+  }
 }
 
-.read-the-docs {
-  color: #888;
+/* main
+-------------------- */
+
+.seperator {
+  display: flex;
+  justify-content: center;
 }
 
-button {
-  padding: 0.6em 1.2em;
-  font-family: inherit;
-  font-size: 1em;
+.main {
+  padding: 40px 0;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 52px;
+}
+
+.article-list-item {
+  display: flex;
+  column-gap: 60px;
+  align-items: center;
+}
+
+.article-list-item__text-block {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+}
+
+.article-list-item img {
+  border-radius: 16px;
+}
+
+.article-list-item h2 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text-color-header);
+  letter-spacing: -0.5px;
+}
+
+/* リンクホバー時の下線アニメーション
+   ref: https://ics.media/entry/240801/#6.-%E4%B8%8B%E7%B7%9A%E3%81%8C%E5%B7%A6%E3%81%8B%E3%82%89%E6%B5%81%E3%82%8C%E3%82%8B%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3 */
+.article-list-item h2 a {
+  font-weight: 600;
+  background-image: linear-gradient(var(--border-color), var(--border-color));
+  background-repeat: no-repeat;
+  background-position: bottom right; /* 下線の初期位置 */
+  background-size: 0 1px;
+  transition: background-size 0.3s;
+}
+
+.article-list-item h2 a:hover,
+.article-list-item h2 a:focus {
+  outline-color: transparent;
+  background-position: bottom left; /* 下線のホバー時位置 */
+  background-size: 100% 1px; /* 下線の横幅を100%にする */
+}
+
+.article-list-item time {
+  font-size: 0.875rem;
   font-weight: 500;
-  cursor: pointer;
-  background-color: #1a1a1a;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #fff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
+  color: var(--text-color-date);
 }
