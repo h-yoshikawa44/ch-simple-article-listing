@@ -8,7 +8,7 @@
   --bg-color: var(--white);
   --text-color-header: var(--black);
   --text-color-date: var(--gray-darken);
-  --partition-color: var(--gray);
+  --border-color: var(--black);
 
   /* font */
   --font-base: 'Poppins', system-ui, 'Avenir', 'Helvetica', 'Arial', sans-serif;
@@ -23,6 +23,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   line-height: 1.5;
+  background-color: var(--bg-color);
 }
 
 a {
@@ -36,7 +37,7 @@ a {
 
 .container {
   max-width: 640px;
-  padding: 0 3.75%;
+  padding: 0 5%;
   margin: 0 auto;
 }
 
@@ -57,4 +58,80 @@ a {
   .container {
     max-width: 1280px;
   }
+}
+
+/* header
+-------------------- */
+
+.header {
+  padding: 48px 40px 44px;
+  text-align: center;
+}
+
+.header__title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* main
+-------------------- */
+
+.seperator {
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  padding: 40px 0;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 52px;
+}
+
+.article-list-item {
+  display: flex;
+  column-gap: 60px;
+  align-items: center;
+}
+
+.article-list-item__text-block {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+}
+
+.article-list-item img {
+  border-radius: 16px;
+}
+
+.article-list-item h2 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text-color-header);
+}
+
+/* リンクホバー時の下線アニメーション
+   ref: https://ics.media/entry/240801/#6.-%E4%B8%8B%E7%B7%9A%E3%81%8C%E5%B7%A6%E3%81%8B%E3%82%89%E6%B5%81%E3%82%8C%E3%82%8B%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3 */
+.article-list-item h2 a {
+  font-weight: 600;
+  background-image: linear-gradient(var(--border-color), var(--border-color));
+  background-repeat: no-repeat;
+  background-position: bottom right; /* 下線の初期位置 */
+  background-size: 0 1px;
+  transition: background-size 0.3s;
+}
+
+.article-list-item h2 a:hover {
+  background-position: bottom left; /* 下線のホバー時位置 */
+  background-size: 100% 1px; /* 下線の横幅を100%にする */
+}
+
+.article-list-item time {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color-date);
 }

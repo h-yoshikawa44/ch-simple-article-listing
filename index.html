@@ -21,9 +21,75 @@
     />
   </head>
   <body>
-    <div id="app">
-      <h1>Vite App</h1>
+    <header class="header">
+      <h1 class="header__title">
+        We release interesting articles about technology
+      </h1>
+    </header>
+    <div class="seperator">
+      <img src="./images/Seperator.svg" alt="" width="180" height="16" />
     </div>
+    <main class="main">
+      <div class="container">
+        <div class="article-list">
+          <article class="article-list-item">
+            <img
+              srcset="./images/photo_1.png, ./images/photo_1@2x.png"
+              src="photo_1.png"
+              alt=""
+              width="160"
+              height="160"
+            />
+            <div class="article-list-item__text-block">
+              <h2>
+                <a href="#">
+                  Unlocking the Power of Cloud Computing: A Guide to Scalable
+                  Solutions
+                </a>
+              </h2>
+              <time datetime="2024-11-12">November 12, 2024</time>
+            </div>
+          </article>
+          <article class="article-list-item">
+            <img
+              srcset="./images/photo_3.png, ./images/photo_3@2x.png"
+              src="photo_3.png"
+              alt=""
+              width="160"
+              height="160"
+            />
+            <div class="article-list-item__text-block">
+              <h2>
+                <a href="#">
+                  The Future of AI: How Machine Learning is Revolutionizing
+                  Industries
+                </a>
+              </h2>
+              <time datetime="2024-11-12">November 12, 2024</time>
+            </div>
+          </article>
+          <article class="article-list-item">
+            <img
+              srcset="./images/photo_2.png, ./images/photo_2@2x.png"
+              src="photo_2.png"
+              alt=""
+              width="160"
+              height="160"
+            />
+            <div class="article-list-item__text-block">
+              <h2>
+                <a href="#">
+                  The Impact of 5G on Business: How Faster Networks are
+                  Transforming the Way We Work
+                </a>
+              </h2>
+              <time datetime="2024-11-12">November 12, 2024</time>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
     <script type="module" src="/js/main.js"></script>
   </body>
 </html>
