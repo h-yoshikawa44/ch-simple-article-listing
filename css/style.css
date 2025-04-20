@@ -43,20 +43,8 @@ a {
 
 @media (width >= 768px) {
   .container {
-    max-width: 768px;
-  }
-}
-
-@media (width >= 1024px) {
-  .container {
-    max-width: 1024px;
-    padding: 0 3.5%;
-  }
-}
-
-@media (width >= 1280px) {
-  .container {
-    max-width: 1280px;
+    max-width: 732px;
+    padding: 0;
   }
 }
 
@@ -72,6 +60,19 @@ a {
   font-size: 2.25rem;
   font-weight: 600;
   line-height: 1.5;
+  letter-spacing: -0.5px;
+}
+
+@media (width >= 768px) {
+  .header {
+    padding: 48px 60px 44px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    padding: 48px 176px 44px;
+  }
 }
 
 /* main
@@ -112,6 +113,7 @@ a {
   font-size: 1.25rem;
   line-height: 1.5;
   color: var(--text-color-header);
+  letter-spacing: -0.5px;
 }
 
 /* リンクホバー時の下線アニメーション
